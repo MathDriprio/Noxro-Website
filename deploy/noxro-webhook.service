@@ -1,0 +1,11 @@
+[Unit]
+Description=Webhook GitHub de NoxroWebsite
+After=network.target
+
+[Service]
+EnvironmentFile=/etc/noxro-webhook.env
+ExecStart=/usr/bin/node /opt/noxro/deploy/webhook.mjs
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

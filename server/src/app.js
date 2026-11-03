@@ -21,7 +21,17 @@ export function createApp() {
   const app = express();
   if (config.production) app.set('trust proxy', 1);
   app.disable('x-powered-by');
-  app.use(helmet({ crossOriginResourcePolicy: { policy: 'same-site' } }));
+  app.use(helmet({
+    crossOriginResourcePolicy: { policy: 'same-site' },
+    contentSecurityPolicy: {
+      directives: {
+        // Script inline de client/index.html qui applique le thème avant le rendu (évite un flash)
+        'script-src': ["'self'", "'sha256-V7Ujzj8r65jnGHRPyleJYadTRqKNFvMsQt3GzwM9FJk='"],
+        // Hors production le site peut être servi en HTTP : ne pas forcer HTTPS sur les ressources
+        'upgrade-insecure-requests': config.production ? [] : null,
+      },
+    },
+  }));
   app.use(express.json({ limit: '100kb' }));
   app.use(cookieParser());
 

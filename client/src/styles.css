@@ -90,7 +90,7 @@
 html, body, #root { min-height: 100%; }
 body {
   margin: 0;
-  font-family: 'Pixelify Sans', ui-monospace, monospace;
+  font-family: 'Barlow', system-ui, sans-serif;
   font-size: 17px;
   color: var(--text);
   background: var(--bg);
