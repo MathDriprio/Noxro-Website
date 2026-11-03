@@ -6,7 +6,7 @@ import ThemePicker from './ThemePicker.jsx';
 const LINKS = [
   { to: '/voitures', label: 'Les voitures' },
   { to: '/taches', label: 'Tâches' },
-  { to: '/depenses', label: 'Dépenses de juif' },
+  { to: '/depenses', label: 'Dépenses' },
   { to: '/documents', label: 'Documents' },
 ];
 
