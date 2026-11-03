@@ -407,25 +407,45 @@ input[type='file'] { padding: .4rem; }
 /* ----- responsive ----- */
 @media (max-width: 900px) {
   .home-grid, .vehicles-page { grid-template-columns: 1fr; }
-  .side-filters { flex-direction: row; flex-wrap: wrap; gap: .2rem 1rem; border-right: 0; border-bottom: 5px solid var(--line); padding: 0 0 .8rem; min-height: 0; }
-  .side-filter { font-size: 1.05rem; }
-  .side-extra { flex-direction: row; width: 100%; margin-top: .6rem; }
+  .side-filters { flex-direction: row; flex-wrap: wrap; gap: .5rem; border-right: 0; border-bottom: 3px solid var(--line); padding: 0 0 1rem; min-height: 0; }
+  .side-filter {
+    font-size: 1rem; align-self: auto; white-space: nowrap; padding: .35rem .9rem;
+    border: 2px solid rgba(255, 255, 255, .3); border-radius: 999px;
+  }
+  .side-filter:hover { border-color: var(--accent); }
+  .side-filter.active { background: var(--accent); border-color: var(--accent); color: var(--on-accent); font-weight: 700; }
+  .side-extra { flex-direction: row; flex-wrap: wrap; width: 100%; margin-top: .4rem; }
+  .side-extra > * { flex: 1 1 200px; }
   .vehicle-head .panel-body { grid-template-columns: 1fr; }
   .kpis { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); }
 }
 @media (max-width: 720px) {
   body { font-size: 16px; }
-  .navbar { margin-right: 0; border-radius: 0 0 var(--radius) 0; flex-wrap: wrap; }
-  .burger { display: flex; }
-  .nav-links { display: none; flex-direction: column; align-items: flex-start; width: 100%; order: 3; gap: .8rem; padding: .6rem 0; }
+  .navbar { margin-right: 0; border-radius: 0 0 var(--radius) var(--radius); flex-wrap: wrap; gap: .4rem .6rem; padding: .4rem .7rem; }
+  .burger { display: flex; padding: .4rem; }
+  .burger span { width: 26px; height: 3px; }
+  .brand { margin-right: 0; }
+  .logo { width: 26px; height: 32px; }
+  .nav-links {
+    display: none; flex-direction: column; align-items: stretch; width: 100%; order: 3; gap: 0; padding: 0;
+    border-top: 2px solid rgba(255, 255, 255, .15); max-height: calc(100vh - 80px); overflow-y: auto;
+  }
   .nav-links.open { display: flex; }
-  .nav-user { margin-left: auto; }
+  .nav-link { font-size: 1.15rem; padding: .85rem .3rem; border-bottom: 1px solid rgba(255, 255, 255, .12); }
+  .nav-link.active { border-bottom-color: var(--accent); color: var(--accent); }
+  .nav-user { margin-left: auto; gap: .4rem; }
   .nav-name { display: none; }
   .theme-label { display: none; }
   .theme-menu { position: fixed; left: 1rem; right: 1rem; top: 64px; width: auto; }
   .panel { box-shadow: -7px -7px 0 color-mix(in srgb, var(--offset) 70%, transparent); margin: 7px 0 0 7px; }
   .panel-body { padding: 1rem; }
-  .tabs, .banner { margin-left: 7px; }
+  .banner { margin-left: 7px; }
+  .tabs {
+    margin-left: 7px; flex-wrap: nowrap; gap: 1.2rem; overflow-x: auto; scrollbar-width: none;
+    border-bottom: 2px solid rgba(255, 255, 255, .2);
+  }
+  .tabs::-webkit-scrollbar { display: none; }
+  .tab { flex: none; white-space: nowrap; padding: .6rem 0; font-size: 1rem; margin-bottom: -2px; }
   .tabs-hint { display: none; }
   .car-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .8rem; }
   .car-name { font-size: 1rem; }

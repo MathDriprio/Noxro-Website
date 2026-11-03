@@ -20,8 +20,8 @@ export default function Layout() {
         <button type="button" className="burger" onClick={() => setOpen((o) => !o)} aria-label="Menu" aria-expanded={open}>
           <span /><span /><span />
         </button>
+        <NavLink to="/" end className="brand" aria-label="Accueil"><span className="logo" /></NavLink>
         <nav className={`nav-links${open ? ' open' : ''}`} onClick={() => setOpen(false)}>
-          <NavLink to="/" end className="brand" aria-label="Accueil"><span className="logo" /></NavLink>
           {LINKS.map((l) => <NavLink key={l.to} to={l.to} className="nav-link">{l.label}</NavLink>)}
         </nav>
         <div className="nav-user">
