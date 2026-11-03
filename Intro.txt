@@ -1,0 +1,339 @@
+Voici un document de référence regroupant tout ce que nous avons défini sur le fonctionnement, les objectifs et les fonctionnalités du site NoxroWebsite, sans parler du code, de l'architecture technique ni de la base de données.
+
+Il est conçu pour être transmis à une autre conversation ChatGPT afin de reprendre le projet sans perdre les décisions prises.
+
+Document de référence • NoxroWebsite • Fonctionnalités et vision du projet
+
+# NoxroWebsite
+
+Cahier des charges fonctionnel et vision du site
+
+Objectif principal
+
+Créer un site collaboratif de gestion automobile permettant de gérer un garage, des véhicules, leurs entretiens, leurs réparations, leurs dépenses et leurs documents.
+
+# 1. Vision générale du projet
+
+NoxroWebsite est un site de gestion automobile collaboratif destiné à être utilisé par moi-même et mes amis.
+
+L'objectif est de centraliser toutes les informations relatives aux véhicules dans un seul endroit.
+
+Le site doit permettre de :
+
+- Gérer plusieurs véhicules.
+- Suivre leur historique d'entretien et de réparation.
+- Centraliser les dépenses et les transactions.
+- Stocker les documents associés.
+- Organiser les tâches à effectuer.
+- Collaborer avec plusieurs utilisateurs.
+- Retrouver facilement l'historique d'un véhicule.
+
+Le véhicule constitue le centre du site. Toutes les informations doivent pouvoir être reliées à un véhicule lorsqu'elles le concernent.
+
+À terme, le site pourrait également servir à des projets plus importants, comme la préparation et l'organisation d'un raid automobile en Afrique.
+
+L'objectif initial reste cependant de créer un outil simple, pratique et fiable.
+
+# 2. Utilisateurs et collaboration
+
+## Utilisateurs
+
+Le site est destiné à plusieurs utilisateurs authentifiés.
+
+Tous les utilisateurs connectés peuvent accéder aux fonctionnalités et aux données normales du site.
+
+Les visiteurs non authentifiés ne doivent pas pouvoir accéder au contenu du site.
+
+## Collaboration
+
+Le site doit permettre aux utilisateurs de travailler ensemble sur les véhicules et les informations du garage.
+
+Les véhicules peuvent être :
+
+- Associés à un ou plusieurs propriétaires.
+- Partagés entre plusieurs utilisateurs.
+- Sans propriétaire particulier et appartenir au garage.
+
+Un véhicule peut changer de propriétaire au cours de sa vie.
+
+L'historique du véhicule doit rester cohérent, même lorsqu'il change de propriétaire.
+
+## Gestion du garage
+
+Le garage représente les véhicules qui ne sont pas associés à un propriétaire individuel.
+
+Il ne doit pas être nécessaire de créer un utilisateur fictif pour représenter le garage.
+
+# 3. Gestion des véhicules
+
+C'est la fonctionnalité centrale du site.
+
+Chaque véhicule possède une fiche regroupant ses informations principales.
+
+La fiche doit notamment permettre de retrouver :
+
+- Les informations d'identification du véhicule.
+- Son immatriculation.
+- Ses propriétaires.
+- Son historique.
+- Ses entretiens et réparations.
+- Ses dépenses.
+- Ses documents.
+- Ses tâches.
+- Ses commentaires.
+
+Les informations exactes dépendront des caractéristiques retenues pour le véhicule.
+
+## Gestion des propriétaires
+
+Un véhicule peut :
+
+- Avoir un propriétaire.
+- Avoir plusieurs propriétaires.
+- Appartenir au garage.
+- Changer de propriétaire.
+
+L'historique du véhicule doit être conservé indépendamment de ses changements de propriétaires.
+
+## Suppression des véhicules
+
+La suppression d'un véhicule ne doit pas entraîner une disparition définitive de ses informations.
+
+Le véhicule doit être masqué du fonctionnement normal du site.
+
+Une page ou un filtre dédié permettra de retrouver les véhicules supprimés.
+
+## Restauration
+
+Un véhicule supprimé doit pouvoir être restauré.
+
+La restauration doit également rétablir les informations qui lui sont associées.
+
+## Réutilisation d'une immatriculation
+
+Si une immatriculation déjà présente dans un véhicule supprimé est réutilisée, le système doit réactiver le véhicule existant plutôt que créer un doublon.
+
+# 4. Entretiens et réparations
+
+Chaque véhicule doit posséder un historique d'entretien et de réparation.
+
+Le site doit permettre de :
+
+- Ajouter un entretien.
+- Ajouter une réparation.
+- Consulter les interventions précédentes.
+- Associer des documents à une intervention.
+- Associer des dépenses à une intervention.
+- Retrouver les informations d'une intervention depuis le véhicule.
+
+Les entretiens et réparations constituent une partie importante de l'historique du véhicule.
+
+L'objectif est de pouvoir retrouver facilement ce qui a été réalisé sur une voiture, sans devoir rechercher les informations dans plusieurs endroits.
+
+# 5. Transactions et dépenses
+
+Le site doit permettre de suivre les dépenses liées aux véhicules.
+
+Les transactions peuvent notamment représenter :
+
+- Des achats de pièces.
+- Des réparations.
+- Des entretiens.
+- Des dépenses diverses.
+- Des achats de véhicules.
+- D'autres frais liés au garage.
+
+Une transaction peut être associée à un véhicule ou à une intervention.
+
+L'objectif est de pouvoir consulter les dépenses et comprendre combien un véhicule a coûté au fil du temps.
+
+Les transactions doivent pouvoir être retrouvées depuis les éléments auxquels elles sont associées.
+
+# 6. Documents et fichiers
+
+Le site doit permettre de centraliser les documents relatifs aux véhicules et au garage.
+
+Exemples :
+
+- Factures.
+- Carte grise.
+- Photos.
+- Documents administratifs.
+- Documents relatifs aux réparations.
+- Documents relatifs aux achats.
+- Autres fichiers utiles.
+
+Les documents doivent pouvoir être associés à différents éléments du site, notamment :
+
+- Utilisateurs.
+- Véhicules.
+- Entretiens.
+- Transactions.
+- Tâches.
+
+Un document doit pouvoir être retrouvé depuis son élément associé.
+
+## Gestion des fichiers
+
+- Taille maximale d'un fichier : 30 Mo.
+- Pas de limite spécifique du nombre de fichiers par élément.
+- Les images sont conservées sous leur forme originale pour le moment.
+
+Il n'est pas nécessaire de créer un système complexe de traitement ou de conversion des images pour la première version.
+
+# 7. Tâches
+
+Le site doit permettre de gérer des tâches relatives aux véhicules et au garage.
+
+Exemples :
+
+- Remplacer une pièce.
+- Effectuer une réparation.
+- Préparer un véhicule.
+- Acheter du matériel.
+- Effectuer un contrôle.
+- Préparer une intervention.
+
+Les tâches doivent pouvoir être associées à un véhicule.
+
+Elles doivent permettre de suivre les actions à effectuer et de retrouver les informations utiles à leur réalisation.
+
+# 8. Commentaires
+
+Le site doit permettre d'ajouter des commentaires sur différents éléments.
+
+Les commentaires peuvent être associés à :
+
+- Un véhicule.
+- Un entretien.
+- Une transaction.
+- Une tâche.
+- Un document.
+
+L'objectif est de faciliter la communication et de conserver des informations contextuelles.
+
+Exemple : ajouter une remarque concernant une réparation directement sur l'intervention correspondante.
+
+# 9. Historique et traçabilité
+
+Le site doit conserver un historique interne des modifications importantes.
+
+L'objectif est de pouvoir retrouver :
+
+- Ce qui a été modifié.
+- Quand la modification a eu lieu.
+- L'action concernée.
+- L'utilisateur à l'origine de la modification.
+
+Ces informations servent principalement à la traçabilité et au fonctionnement interne.
+
+Les logs ne constituent pas une fonctionnalité normale destinée aux utilisateurs.
+
+# 10. Administration
+
+Le site doit rester simple à administrer.
+
+Les fonctionnalités normales doivent être accessibles aux utilisateurs authentifiés.
+
+Les opérations avancées d'administration du système et de gestion des données restent sous mon contrôle.
+
+Il n'est pas prévu de développer un système complexe de permissions pour la première version.
+
+# 11. Fonctionnalités volontairement exclues de la première version
+
+Pour éviter de complexifier inutilement le projet, certaines fonctionnalités ne sont pas prévues actuellement.
+
+| Fonctionnalité                  | Décision    |
+| ------------------------------- | ----------- |
+| Historique du kilométrage       | Non prévu   |
+| Gestion des fournisseurs        | Non prévue  |
+| Catalogue de pièces             | Non prévu   |
+| Notifications                   | Non prévues |
+| Système d'événements            | Non prévu   |
+| Traitement complexe des images  | Non prévu   |
+| Gestion avancée des permissions | Non prévue  |
+
+Ces fonctionnalités pourront éventuellement être ajoutées plus tard si le besoin apparaît.
+
+L'objectif est de ne pas développer des fonctionnalités simplement parce qu'elles pourraient être utiles un jour.
+
+# 12. Expérience utilisateur
+
+Le site doit rester agréable et simple à utiliser.
+
+Les informations doivent être accessibles rapidement, sans obliger l'utilisateur à naviguer entre de nombreuses pages.
+
+Les filtres doivent pouvoir être utilisés sans recharger complètement la page.
+
+Les formulaires doivent :
+
+- Être simples à comprendre.
+- Vérifier les informations saisies.
+- Expliquer clairement les erreurs.
+- Empêcher la validation si les informations sont incorrectes.
+
+L'utilisateur doit être informé lorsqu'une action échoue, notamment lors de la création ou de la modification d'un élément.
+
+# 13. Organisation générale des fonctionnalités
+
+Voici la vision fonctionnelle globale :
+
+```
+NoxroWebsite
+│
+├── Utilisateurs
+│   ├── Profils
+│   └── Collaboration
+│
+├── Garage
+│   ├── Véhicules
+│   ├── Propriétaires
+│   └── Véhicules du garage
+│
+├── Véhicules
+│   ├── Informations générales
+│   ├── Entretiens
+│   ├── Réparations
+│   ├── Transactions
+│   ├── Documents
+│   ├── Tâches
+│   └── Commentaires
+│
+├── Entretiens et réparations
+│   ├── Historique
+│   ├── Documents
+│   └── Dépenses
+│
+├── Transactions
+│   ├── Achats
+│   ├── Dépenses
+│   └── Factures
+│
+├── Documents
+│   ├── Fichiers administratifs
+│   ├── Factures
+│   └── Photos
+│
+├── Tâches
+│   └── Actions à effectuer
+│
+└── Historique interne
+    └── Logs
+```
+
+# 14. Objectif final
+
+NoxroWebsite doit devenir un outil central de gestion automobile.
+
+Le but n'est pas de créer un logiciel professionnel gigantesque avec des centaines de fonctionnalités, mais un système suffisamment bien pensé pour évoluer sans devoir tout reconstruire.
+
+La première version doit privilégier :
+
+- La simplicité.
+- La fiabilité.
+- La collaboration.
+- La centralisation des informations.
+- La facilité d'utilisation.
+- La possibilité d'évolution.
+
+Le véhicule est le cœur du système, et tout le reste doit naturellement s'organiser autour de lui.
